@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <fieldset>
+        <legend>필수항목</legend>
+        ID : <input type="text" required> <br>
+        PW : <input type="text" required> <br>
+        NAME : <input type="text" required> <br>
+    </fieldset>
+    <fieldset>
+        <legend>선택항목</legend>
+        전화번호 : <input name="text1"><br>
+        주소 : <input name="text1"><br>
+        생년월일 : <input type="date" name="dateInput"> <br>
+        성별 : <input type="radio">남 &emsp; <input type="radio">여 <br>
+        사용하는 언어 :
+        <select>
+            <optgroup label="프로그램">
+                <option value="C">C</option>
+                <option value="JAVA">JAVA</option>
+                <option value="C++">C++</option>
+                <option value="ANDROID">ANDROID</option>
+                <option value="PYTHON">PYTHON</option>
+
+                <option value="ORACLE">ORACLE</option>
+                <option value="REACT">REACT</option>
+                <option value="R">R</option>
+            </optgroup>
+            <optgroup label="기타">
+                <option value="UML">UML</option>
+                <option value="AWS">AWS</option>
+                <option value="FIGMA">FIGMA</option>
+                <option value="GITHUB">GITHUB</option>
+                <option value="DOCKER">DOCKER</option>
+            </optgroup>
+
+        </select><br>
+        자기소개 : <textarea name="content" cols="35" rows="10"></textarea>
+    </fieldset>
+    <input type="submit" value="서버로 전송">
+</body>
+
+</html>
