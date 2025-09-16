@@ -1,0 +1,46 @@
+table {
+    border: 1px solid;
+
+    border-spacing: 10px 20px;
+    /* 표 테두리와 셀테두리의 간격 */
+    /* border-collapse: separate; 기본값 */
+    border-collapse: collapse;
+    /* 표 테두리와 셀테두리 합치기 */
+    /* spacing 소용없음  */
+    width: 480px;
+
+    table-layout: fixed;
+    /* 테이블 넓이 고정 */
+    /* 기본값 auto, fixed : 테이블의 width 값 고정 (글씨가 많아도 안늘어남) */
+}
+
+thead,
+tfoot {
+    background-color: lightgray;
+}
+
+tbody {
+    background-color: beige;
+}
+
+th,
+td {
+    border: 1px solid;
+    width: 160px;
+    height: 50px;
+    padding: 10px;
+    text-align: center;
+    /* th 가운데 정렬, td 왼쪽정렬 -> 가운데 정렬로 */
+    vertical-align: bottom;
+    /* 기본값은 middle  */
+    word-break: break-all;
+    /* 메모장 서식자동맞춤이라 생각하면 편함 */
+    /* 영문의 글자에 공백이 없어도 중간에 끊어서 내림 
+    즉 자동으로 줄바꿈 해줌 */
+
+}
+
+
+.borderTop {
+    border-top: 2px solid palevioletred;
+}

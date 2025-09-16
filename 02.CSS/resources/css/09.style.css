@@ -1,0 +1,93 @@
+/* ===================== 테두리 관련 스타일 ============================== */
+
+div {
+    width: 90px;
+    height: 90px;
+    border-width: 3px;
+    margin: 10px;
+    padding: 10px;
+}
+
+
+#test1 {
+    border-style: dotted;
+    border-top-width: 10px;
+
+}
+
+#test2 {
+    box-shadow: 5px 5px 10px 5px gray;
+
+}
+
+#test3 {
+    border-style: dashed double solid dotted;
+    /* 변수 시계방향 - padding margin 과 똑같음  */
+    border-width: 5px;
+}
+
+#test4 {
+    border-style: dashed;
+    border-left-color: slateblue;
+}
+
+#test5 {
+    border-style: groove;
+    border-width: 10px;
+    border-color: aquamarine;
+    /* 두가지색 액자처럼 */
+}
+
+#test6 {
+    border-style: ridge;
+    border-width: 10px;
+}
+
+#test7 {
+    border-style: inset;
+    border-width: 10px;
+}
+
+#test8 {
+    border-style: outset;
+    border-width: 10px;
+}
+
+#test9 {
+    border-style: solid;
+    /* border-radius: 20px; */
+    /* border-top-left-radius: 20px; */
+    /* top bottom 이런식이아닌 top-left, bottom-right 이런식으로 주어야함 */
+    /* border-bottom-right-radius: 50px; */
+    border-radius: 20px 50px;
+    /* 왼쪽 위부터 시계방향  */
+
+}
+
+#test10 {
+    border: 10px dotted pink;
+}
+
+#btn:hover {
+    background-color: blueviolet;
+    color: white;
+    /* 버튼위에 커서가 갈때 */
+}
+
+
+
+#btn,
+#inputBtn {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: cadetblue;
+}
+
+
+#btn:hover,
+#inputBtn:hover {
+    background-color: blueviolet;
+    color: white;
+    /* 버튼위에 커서가 갈때 */
+}

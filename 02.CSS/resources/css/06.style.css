@@ -1,0 +1,120 @@
+/* ======================== 1. color ==================== */
+#color {
+    color: red;
+    color: #808000;
+    color: rgb(40, 117, 118);
+    color: rgba(7, 171, 175, 0.5);
+    color: hsl(240, 100%, 50%);
+    /* h:색상값(0~360), s:채도(%), l:명도(%) */
+    color: hsla(240, 100%, 50%, 0.5);
+}
+
+/* ======================== 2. text-decoratioin ==================== */
+#td1 {
+    text-decoration: underline;
+}
+
+#td2 {
+    text-decoration: line-through;
+}
+
+#td3 {
+    text-decoration: overline;
+}
+
+#td4 {
+    text-decoration: none;
+}
+
+/* ======================== 3. text-transform ==================== */
+#tt1 {
+    text-transform: uppercase;
+}
+
+#tt2 {
+    text-transform: lowercase;
+}
+
+#tt3 {
+    text-transform: capitalize;
+}
+
+/* ======================== 4. text-shadow ==================== */
+.shadow {
+    font-size: 50px;
+    font-weight: 900;
+}
+
+#ts1 {
+    color: orangered;
+    text-shadow: 5px 5px;
+    text-shadow: -5px -5px 5px rgb(249, 162, 130);
+}
+
+#ts2 {
+    color: white;
+    text-shadow: 0px 0px 10px black;
+    text-shadow: 0 0 10px yellowgreen;
+}
+
+#ts3 {
+    text-shadow: 0 0 4px gray,
+        0 -5px 4px yellow,
+        0 -10px 8px orange,
+        0 -15px 15px orangered,
+        0 -22px 20px red;
+}
+
+/* 이런식으로도 가능 */
+/* ======================== 5. text-align ==================== */
+#justify {
+    text-align: justify;
+}
+
+#right {
+    text-align: right;
+}
+
+#center {
+    text-align: center;
+}
+
+/* ======================== 6. line-height ==================== */
+#lhpx {
+    /* font-size: 50px; */
+    line-height: 30px;
+}
+
+/* 
+    글자크기와 상관없이 간격 동일
+    즉  고정크기 */
+#lhem {
+    /* font-size: 50px; */
+    line-height: 3em;
+}
+
+/* 
+    글자크기에 따라 간격 조절 
+    글자의 n개크기 간격 
+    가변 길이*/
+
+#lhpc {
+    line-height: 300%;
+}
+
+/* 
+    lhem과 비슷하다 
+    가변길이*/
+/* 함수 종류별로 글자 크기에 따라 변하거나 안변할 수 있음  */
+#test {
+    width: 200px;
+    height: 200px;
+    background-color: aquamarine;
+    text-align: center;
+    line-height: 200px;
+}
+
+/* 
+    lh height 랑 똑같이주면 가운데로 들어갈 수 있음  
+    가운데로 가기 떄문에 
+*/

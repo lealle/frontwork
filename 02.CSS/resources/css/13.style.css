@@ -1,0 +1,81 @@
+.positioning {
+    border: 1px solid;
+}
+
+.ye {
+    background-color: yellow;
+}
+
+.yg {
+    background-color: yellowgreen;
+}
+
+.red {
+    background-color: red;
+}
+
+.outer {
+    position: relative;
+}
+
+#div1 {
+    width: 300px;
+    height: 300px;
+    /* position: absolute; */
+    /* absolute를 시작하고 위치를 지정하면 relative를 찾고 그것을 기준으로 들어감  relative 없을시에는 body를 기준*/
+
+
+}
+
+#div2 {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+
+#div3 {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+}
+
+#fixed-area {
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    top: 50px;
+    left: 50px;
+}
+
+.outer2 {
+    position: relative;
+}
+
+.z-test {
+    border: 1px solid;
+    width: 150px;
+    height: 100px;
+    position: absolute;
+}
+
+#z1 {
+    top: 100px;
+    left: 100px;
+    z-index: 3;
+}
+
+#z2 {
+    top: 50px;
+    left: 50px;
+    z-index: 2;
+}
+
+#z3 {
+    /* z-index: 1; */
+}
+
+/* z-index 큰것부터 나온다 */

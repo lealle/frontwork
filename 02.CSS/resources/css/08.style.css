@@ -1,0 +1,47 @@
+/* =================== 01. 요소영역 ======================== */
+.test {
+    width: 100px;
+    height: 100px;
+    background-color: lightsteelblue;
+    border: 3px solid;
+}
+
+#test1 {
+    padding: 100px;
+    /*컨텐츠 영역으로부터 상하좌우 100px 씩 증가시킴 */
+}
+
+#test2 {
+    padding-top: 100px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+    padding-left: 10px;
+}
+
+#test3 {
+    padding: 20px 50px;
+    /* 위,아래 20px | 양옆 50px */
+    padding: 20px 50px 100px;
+    /* 위 20px | 양옆 50px | 아래 100px */
+    padding: 100px 20px 30px 10px;
+    /* 위 100 | 오 20 | 아래 30 | 왼 10 */
+    /* 위에서 부터 시계방향  그리하여 위랑 똑같음 */
+}
+
+#test4 {
+    margin: 50px;
+}
+
+#test5 {
+    margin-top: 50px;
+    margin-left: 20px;
+    /* 오른쪽, 아래는 현상태에서는 의미 없어서 굳이 margin 주지 않음 */
+}
+
+#test6 {
+    margin: 50px 20px;
+    margin: 50px 20px 10px 30px;
+    /* test3과 비슷함 위에서부터 시계방향 */
+    margin: auto;
+    /* 가로 기준으로 한가운데 들어감  */
+}
