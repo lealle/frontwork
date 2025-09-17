@@ -1,0 +1,13 @@
+header {
+    height: 350px;
+}
+
+header->logo {
+    float: left;
+
+}
+
+aside img {
+    width: 340px;
+
+}

@@ -1,0 +1,21 @@
+section {
+
+    float: right;
+
+    width: 79%;
+    height: 1500px;
+    border: 1px solid;
+
+}
+
+aside {
+    width: 20%;
+    height: 1500px;
+    float: left;
+    border: 1px solid;
+
+}
+
+footer {
+    clear: both;
+}

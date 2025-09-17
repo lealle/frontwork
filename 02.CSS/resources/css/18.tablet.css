@@ -1,0 +1,17 @@
+section {
+    float: left;
+    width: 77%;
+    height: 1500px;
+    border: 1px solid;
+}
+
+aside {
+    width: 20%;
+    height: 1500px;
+    border: 1px solid;
+    float: right;
+}
+
+footer {
+    clear: both;
+}

@@ -1,0 +1,75 @@
+header {
+    text-align: center;
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+
+.menu-item {
+    width: 300px;
+    height: 200px;
+    margin: 5px;
+    background: no-repeat;
+    background-size: cover;
+
+}
+
+#menu1 {
+    background-image: url(../img/juk.jfif);
+}
+
+#menu2 {
+    background-image: url(../img/찌개.jfif);
+
+}
+
+#menu3 {
+    background-image: url(../img/qkscks.jfif);
+
+}
+
+#menu4 {
+    background-image: url(../img/gntlr.jfif);
+
+}
+
+#menu5 {
+    background-image: url(../img/gntlr.jfif);
+
+}
+
+#menu6 {
+    background-image: url(../img/dlftlr.jfif);
+
+}
+
+#menu7 {
+    background-image: url(../img/didtlr.jfif);
+
+}
+
+#menu8 {
+    background-image: url(../img/wndtlr.jfif);
+
+}
+
+#menu9 {
+    background-image: url(../img/vktmxk.jfif);
+
+}
+
+#menu10 {
+    background-image: url(../img/Wlaekfr.jfif);
+
+}
+
+h2 {
+    color: white;
+    text-align: center;
+    line-height: 320px;
+    text-shadow: 1px 1px black;
+}

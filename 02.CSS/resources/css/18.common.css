@@ -1,0 +1,24 @@
+header {
+    background-color: darkseagreen;
+    text-align: center;
+}
+
+header>h1 {
+    color: white;
+
+    text-shadow: 1px 1px black;
+}
+
+section,
+aside {
+    padding: 1px;
+}
+
+
+footer {
+    padding: 1px;
+    background-color: darkseagreen;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px black;
+}

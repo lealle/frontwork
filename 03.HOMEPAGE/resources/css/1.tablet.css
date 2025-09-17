@@ -1,0 +1,28 @@
+nav {
+    width: 90%;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    background-color: darkslateblue;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+section {
+    margin-left: 10%;
+    text-align: center;
+    width: 100%;
+    height: 500px;
+}
+
+aside {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: flex-end;
+    align-items: baseline;
+}

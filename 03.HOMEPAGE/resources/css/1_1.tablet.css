@@ -1,0 +1,45 @@
+header,
+nav,
+section,
+aside,
+footer {
+    width: 90%;
+    margin: 0 auto;
+}
+
+nav {
+    height: 100px;
+}
+
+nav a {
+    width: 25%;
+    line-height: 100px;
+}
+
+section {
+    float: none;
+    /* 태블릿에서는 float 해제 */
+    width: 100%;
+    /* 너비를 100%로 설정 */
+    height: auto;
+    text-align: center;
+}
+
+aside {
+    float: none;
+    /* 태블릿에서는 float 해제 */
+    width: 100%;
+    height: auto;
+    /* 이미지를 가로로 정렬하기 위해 추가 */
+    overflow: hidden;
+}
+
+aside img {
+    float: left;
+    width: 33.333%;
+    box-sizing: border-box;
+}
+
+footer {
+    clear: both;
+}

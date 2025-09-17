@@ -1,0 +1,57 @@
+header,
+nav,
+section,
+aside,
+footer {
+    /* 기존 margin: 0 auto를 사용하지 않는 방식으로 수정 */
+    margin: 0 10%;
+    box-sizing: border-box;
+    /* 패딩과 보더가 너비에 포함되도록 설정 */
+}
+
+nav>a {
+    color: white;
+    text-decoration: none;
+    /* 링크 밑줄 제거 */
+}
+
+nav {
+    /* 가로 정렬을 위해 float 방식 사용 */
+    overflow: hidden;
+    /* float 해제 */
+}
+
+nav a {
+    float: left;
+    width: 25%;
+    /* 4개 메뉴를 균등하게 배치 */
+    height: 100%;
+    text-align: center;
+    line-height: 100px;
+}
+
+#logo {
+    width: 20%;
+    background-size: auto;
+    float: left;
+}
+
+#login {
+    float: right;
+}
+
+#titleImg {
+    width: 100%;
+    height: 400px;
+    clear: both;
+    /* 로고와 로그인 폼의 float 해제 */
+}
+
+/* 호버와 액티브 효과는 그대로 유지 */
+.navi a:hover {
+    color: red;
+}
+
+.navi a:active {
+    color: black;
+}
