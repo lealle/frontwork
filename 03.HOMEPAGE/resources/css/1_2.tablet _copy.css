@@ -52,7 +52,7 @@ aside {
 aside img {
     float: left;
     width: 33%;
-    margin-left: 1px;
+    /* margin-left: 1px; */
 }
 
 footer {
