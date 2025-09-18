@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수와 자료형</title>
+</head>
+
+<body>
+    <h1>변수와 자료형</h1>
+    <h2>변수 선언시 var 뿐만 아니라 let, const 를 이용하여 선언 가능</h2>
+
+    <h3>* var, let, const의 차이점</h3>
+
+    <h4>1) 변수 선언 방법</h4>
+    <button onclick="diffDeclare();">클릭</button>
+
+
+    <h4>2) 스코프(사용 가능한 범위) </h4>
+    <button onclick="diffScope();">클릭</button>
+
+    <script>
+        function diffDeclare() {
+            // 1) var : 중복선언 가능(단점)
+            var userId = "user01";
+            console.log(userId);
+            var userId = "user02";
+            console.log(userId);
+            // 오류 발생 x 
+
+            userId = "user03"; // 재할당 가능
+            console.log(userId);
+
+            console.log("-------------------------------");
+
+            // 2) let : 중복선언 불가 
+            let userPw = "pass01";
+            console.log(userPw);
+            // let userPw = "pass02"  중복선언 불가
+
+            userPw = "pass03";
+            console.log(userPw); // 재할당 가능
+
+
+            console.log("-------------------------------");
+
+            // 3) const : 중복선언 불가, 재할당 불가 (프로그램의 상수 개념)
+            const user = "user01";
+            console.log(user);
+
+            // const user = "user02";
+
+            // user = "user03"; // 재할당불가 출력시 오류
+            console.log(user);
+
+            /*
+                - var 은 자유롭게 변수선언, 사용할 수 있다는 장점이 있지만 
+                - 중복된 변수가 남발할 수 있고 의도치 않게 값이 변경이 될 수도 있음 => 가장 큰 단점 
+                => 보완하여 나온것이 let, const 임
+                   권장사항 : let, const 위주로 사용
+                
+
+            */
+
+        }
+
+        function diffScope() {
+            // 1) var : function scope => 변수가 선언된 "함수 영역" 내에서 사용가능
+            var name = "한빛나";
+            console.log(name);
+
+            if (true) {
+                var age = 20;
+            }
+
+            console.log(age); // 실행가능
+
+            for (var i = 0; i < 3; i++) {
+
+            }
+            console.log(i); //출력됨
+
+            console.log("-------------------------------");
+
+            // 2) let , const : block scope => 변수가 선언된 "블럭{}" 내에 서만 사용 가능/ 다른프로그램 
+            if (true) {
+                let hobby = "운동";
+                const gender = "M";
+            }
+            // console.log(hobby);
+            // console.log(gender);
+            // 실행불가능
+
+            // for (let i = 0; i < 3; i++) {
+
+            // }
+            // console.log(i); //출력안됨
+
+            console.log("-------------------------------");
+
+
+
+        }
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
