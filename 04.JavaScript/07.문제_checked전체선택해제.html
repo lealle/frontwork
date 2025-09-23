@@ -1,70 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>checkbox 전체 선택 및 해제</title>
 </head>
+
 <body>
     <fieldset>
         <legend>읽고 싶은 장르</legend>
         <table>
             <tr>
                 <td rowspan="2">
-                    <input type="checkbox" id="selectAll" name="book" 
-                    value="selectall" onclick="selectAllTogggle(this);">
+                    <input type="checkbox" id="selectAll" name="book" value="selectall"
+                        onclick="selectAllTogggle(this);">
                     <b>Select All</b>
                 </td>
                 <td>
-                    <input type="checkbox" name="book" class="book-option"
-                    value="fiction" onclick="updateSelectAll();">
+                    <input type="checkbox" name="book" class="book-option" value="fiction" onclick="updateSelectAll();">
                     소설
                 </td>
                 <td>
-                    <input type="checkbox" name="book" class="book-option"
-                    value="essay" onclick="updateSelectAll();">
+                    <input type="checkbox" name="book" class="book-option" value="essay" onclick="updateSelectAll();">
                     에세이
                 </td>
                 <td>
-                    <input type="checkbox" name="book" class="book-option"
-                    value="humanities" onclick="updateSelectAll();">
+                    <input type="checkbox" name="book" class="book-option" value="humanities"
+                        onclick="updateSelectAll();">
                     인문
                 </td>
                 <td>
-                    <input type="checkbox" name="book" class="book-option"
-                    value="cooking" onclick="updateSelectAll();">
+                    <input type="checkbox" name="book" class="book-option" value="cooking" onclick="updateSelectAll();">
                     요리
                 </td>
                 <td>
-                    <input type="checkbox" name="book" class="book-option"
-                    value="health" onclick="updateSelectAll();">
+                    <input type="checkbox" name="book" class="book-option" value="health" onclick="updateSelectAll();">
                     건강
                 </td>
             </tr>
             <tr>
                 <td>
-                    <input type="checkbox" name="book" class="book-option"
-                    value="economy" onclick="updateSelectAll();">
+                    <input type="checkbox" name="book" class="book-option" value="economy" onclick="updateSelectAll();">
                     경제
                 </td>
                 <td>
-                    <input type="checkbox" name="book" class="book-option"
-                    value="history" onclick="updateSelectAll();">
+                    <input type="checkbox" name="book" class="book-option" value="history" onclick="updateSelectAll();">
                     역사
                 </td>
                 <td>
-                    <input type="checkbox" name="book" class="book-option"
-                    value="it" onclick="updateSelectAll();">
+                    <input type="checkbox" name="book" class="book-option" value="it" onclick="updateSelectAll();">
                     컴퓨터
                 </td>
                 <td>
-                    <input type="checkbox" name="book" class="book-option"
-                    value="science" onclick="updateSelectAll();">
+                    <input type="checkbox" name="book" class="book-option" value="science" onclick="updateSelectAll();">
                     과학
                 </td>
                 <td>
-                    <input type="checkbox" name="book" class="book-option"
-                    value="travel" onclick="updateSelectAll();">
+                    <input type="checkbox" name="book" class="book-option" value="travel" onclick="updateSelectAll();">
                     여행
                 </td>
             </tr>
@@ -88,9 +81,12 @@
             //     checkbox.checked = shouldCheck;
             // }
 
-            checkboxes.forEach(function(checkbox) {
-                checkbox.checked = shouldCheck;
-            });
+            // checkboxes.forEach(function (checkbox) {
+            //     checkbox.checked = shouldCheck;
+            // });
+
+            // 화살표 함수로 변경
+            checkboxes.forEach(checkbox => checkbox.checked = shouldCheck);
         }
 
         function updateSelectAll() {
@@ -98,9 +94,12 @@
             const selectAll = document.querySelector('#selectAll');
 
             // Array.from(allOptions) : 배열로 변환 
-            const allChecked = Array.from(allOptions).every(function(option) {
-                return option.checked;
-            });
+            // const allChecked = Array.from(allOptions).every(function (option) {
+            //     return option.checked;
+            // });
+
+            // 화살표 함수로 변경
+            const allChecked = Array.from(allOptions).every(option => option.checked);
             selectAll.checked = allChecked;
 
             /*
@@ -117,4 +116,5 @@
         }
     </script>
 </body>
+
 </html>

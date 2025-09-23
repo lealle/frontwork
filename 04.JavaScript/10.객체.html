@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체</title>
+    <style>
+        .area {
+            border: 1px solid;
+            padding: 5px;
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>객체</h1>
+    <h3>* 객체의 선언 및 사용</h3>
+    <p>
+        - 객체는 중괄호{}를 사용하여 생성, <br>
+        &ensp;중괄호 안에 이 객체에 필요한 속성을 정의함.<br>
+        - 속성명.속성값 의 형태로 정의(key-value)<br>
+        &ensp;속성값으로는 모든 자료형의 값을 담을 수 있다.
+    </p>
+
+    <pre>
+    변수 = {
+        속성명 : 속성값, 
+        속성명 : 속성값, 
+        속성명 : 속성값, 
+        속성명 : 속성값, 
+        ...
+    }
+</pre>
+
+    <div class="area" id="area1"></div>
+    <button onclick="test1()">실행확인</button>
+
+    <script>
+        function test1() {
+            let area1 = document.getElementById('area1')
+            // 배열 == 자바의 컬렉션 (ArrayList)와 비슷
+            const arr = ['망고', 25000, 'fruit', ['Lime', 'Peach', 'Berry']]
+
+            // 객체 (key-value) == 자바의 컬렉션(HashMap) 와 비슷
+            const product = {
+                pName: 'Mango',
+                price: 25000,
+                'kind': 'fruit',
+                fruitKind: ['Lime', 'Peach', 'Berry']
+            }
+
+            console.log(product)
+            console.log(typeof product)
+
+            area1.innerHTML = `product : ${product}<br>`;
+
+            // 객체의 속성 접근하는 방법
+            // 방법1. 대괄호를 이용하는 방법 : 객체명["속성명"] -> 반드시 속성명은 문자열로("",'')
+            area1.innerHTML += `<b>객체명["속성명"]으로 접근하기</b> <br>`;
+            area1.innerHTML += `pName : ${product["pName"]}<br>`;
+            area1.innerHTML += `price : ${product["price"]}<br>`;
+            area1.innerHTML += `kind : ${product["kind"]}<br>`;
+            area1.innerHTML += `fruitKind : ${product["fruitKind"]}<br>`;
+            area1.innerHTML += `fruitKind[1] : ${product["fruitKind"][1]}<br>`;
+
+            //방법2. 
+            area1.innerHTML += `<b>객체명.속성명 으로 접근하기</b> <br>`;
+            area1.innerHTML += `pName : ${product.pName}<br>`;
+            area1.innerHTML += `price : ${product.price}<br>`;
+            area1.innerHTML += `kind : ${product.kind}<br>`;
+            area1.innerHTML += `fruitKind : ${product.fruitKind}<br>`;
+            area1.innerHTML += `fruitKind[1] : ${product.fruitKind[1]}<br>`;
+
+        }
+    </script>
+    <h3>* 객체 생성시 특이케이스(속성명 제시시 반드시 문자열 형태로해야되는 경우) </h3>
+    <!-- key 를 반드시 ""으로 해야되는 경우 -->
+
+    <div class="area" id="area2"></div>
+    <button onclick="test2()">실행확인</button>
+
+    <script>
+        function test2() {
+            // 속성명에 빈칸이나 특수기호가 들어가면 반드시 ""로 감싸야 한다.
+            const user = {
+                "user name": '홍길동',
+                "age!!": 20
+            }
+            // "" 안할시 오류 발생
+
+            console.log(user);
+            const area2 = document.getElementById('area2');
+            // 오류
+            // area2.innerHTML = `user name : ${user.user name}`;
+            // area2.innerHTML += `user name : ${user.age!!}`;
+
+            // 반드시 속성명에 빈칸이나 특수기호가 들어있으면 대괄호 이용
+            area2.innerHTML += `user name : ${user["user name"]}<br>`;
+            area2.innerHTML += `age!! : ${user["age!!"]}<br>`;
+        }
+    </script>
+
+    <h3>* 객체에서의 반복문</h3>
+    <p>
+        객체가 가지고 있는 모든 속성을에 순차적으로 접근하고자 한다면 반복문 사용 가능<br>
+        단, 단순한 for loop로는 불가, 향상된 for문만 사용 가능<br>
+    </p>
+
+    <div class="area" id="area3"></div>
+    <button onclick="test3()">실행확인</button>
+
+    <script>
+        function test3() {
+            const area3 = document.getElementById('area3');
+
+            const game = {
+                title: '대륙의 전쟁',
+                price: 150000,
+                language: '한국어',
+                company: 'tjoeun'
+            }
+
+            for (let i = 0; i < 4; i++) {
+                // undefined
+                area3.innerHTML += `${i} : ${game[i]}  <br>`;
+            }
+
+            for (key in game) { // key=속성명 이 담긴다.
+                // 대괄호로 접근 ( . 으로 접근하면 객체의 속성명이 key인걸 찾음)
+                area3.innerHTML += `${key} : ${game[key]}  <br>`;
+            }
+
+            // for (a of game) {
+            //     area3.innerHTML += `${a}  <br>`;
+            // }
+            // 안됨 in 만 가능 
+        }
+    </script>
+
+    <pre>
+객체 생성
+ student 객체 생성 속성 3개이상 (그중 1개는 속성명에 빈칸, 1개는 특수기호)
+  속성명, 속성값 자유
+
+다음을 화살표 함수로 바꾸시오
+1. let tjoeun1 = function(name) {
+	return name;
+   }
+
+2. let tjoeun2 = function(name, age) {
+	만약 age가 50이하이면 age+2000을 하여 year변수에 저장
+	그렇지 않으면 age+1900을 하여 year변수에 저장 
+	return name님의 생년은 ????년 입니다;
+   }
+
+map() 함수를 이용하여 배열 [2,4,6,8]로 => 새로운 배열[10,20,30,40]의 
+    배열 생성하여 출력
+
+
+
+    </pre>
+    <div class="area" id="area4"></div>
+    <button onclick="test4()">실행확인</button>
+
+    <script>
+        function test4() {
+            let area4 = document.getElementById('area4');
+
+            const student = {
+                "student name": '홍길동',
+                "id!!": 'A0101',
+                age: 20
+            }
+            area4.innerHTML += `객체출력<br>`;
+            for (key in student) {
+                area4.innerHTML += `${key} : ${student[key]}<br>`;
+
+            }
+
+            let tjoeun1 = name => name;
+
+            let tjoeun2 = (name, age) => `${name}님의 생년은 ${distinguish_age(age)}년 입니다`;
+
+            function distinguish_age(age) {
+                if (age <= 50) {
+                    return age + 2000;
+                }
+                else if (age > 50) {
+                    return age + 1900;
+                }
+            }
+            const arr = [2, 4, 6, 8]
+            const result = arr.map(function (ele) {
+                return ele * 5;
+            });
+
+            area4.innerHTML += `1. ${tjoeun1('홍길동')}<br>`;
+            area4.innerHTML += `2. ${tjoeun2('홍길동', 40)}<br>`;
+            area4.innerHTML += `2. ${tjoeun2('이순신', 60)}<br>`;
+            area4.innerHTML += `3. arr : ${arr}<br>`;
+            area4.innerHTML += `3. arr.map : ${result}<br>`;
+
+        }
+    </script>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>
