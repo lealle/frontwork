@@ -31,6 +31,7 @@ function validata() {
     }
 
     // checkPw
+
     if (checkPw.value != inputPw.value) {
         alert('비밀번호가 일치하지 않습니다.')
         checkPw.value = '';
