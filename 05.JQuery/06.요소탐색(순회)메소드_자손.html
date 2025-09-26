@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>탐색 (순회) 메소드_자손 후손</title>
+    <script src="resources/js/jquery-3.7.1.min.js"></script>
+    <style>
+        .wrap,
+        .wrap * {
+            border: 1px solid lightgray;
+            color: gray;
+            display: block;
+            padding: 5px;
+            margin: 15px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h3>* 자손, 후손(Descendants) 메소드 : 기준이 되는 요소의 하위요소들을 선택할 수 있는 메소드 </h3>
+
+    <div class="wrap">
+        <div>div
+            <ul>ul
+                <li>li
+                    <span>span</span>
+                </li>
+            </ul>
+        </div>
+        <div>div
+            <p>p
+                <span>
+                    span
+                </span>
+            </p>
+        </div>
+    </div>
+
+    <h4>- $('선택자').children() </h4>
+    선택된 요소의 모든 자손 (바로 하위)요소들을 선택하는 메소드
+
+    <h4>- $('선택자').children('선택자') </h4>
+    선택된 요소의 모든 자손들 중 제시한 값과 일치하는 요소들만 선택
+
+    <h4>- $('선택자').find('선택자') </h4>
+    선택된 요소의 모든 후손(하위 요소들 전체)들 중 제시한 값과 일치하는 요소들만 선택
+
+    <script>
+        $(() => {
+            // 앞으로 부여할 스타일 객체
+            const style1 = { color: 'cyan', border: '2px solid cyan' }
+            const style2 = { color: 'blue', border: '2px solid blue' }
+            const style3 = { color: 'lightgreen', border: '2px solid lightgreen' }
+            const style4 = { color: 'orange', border: '2px solid orange' }
+            const style5 = { color: 'purple', border: '2px solid purple' }
+
+            // children()
+            $('.wrap').children().css(style1);
+            $('.wrap').children().children().css(style2);
+
+            // children('선택자')
+            $('.wrap').children().children('ul').css(style5);
+
+            // find()
+            $('.wrap').find('li').css(style3);
+            $('.wrap').find('span').css(style4);
+        });
+    </script>
+
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>
