@@ -52,10 +52,11 @@
     <span id="s1">제목</span> /
     <span id="s2">작성자</span> /
     <span id="s3">작성일</span> /
-    <span id="s4">조회수</span> /
+    <span id="s4">조회수</span>
 
     <script>
         $(() => {
+            // children 안쓰고 tody>tr해도 됨
             $('tbody').children().each(function (i, el) {
                 $(this).click(function () {
                     for (let j = 0; j < 5; j++) {

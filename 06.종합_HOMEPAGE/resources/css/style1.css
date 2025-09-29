@@ -1,0 +1,201 @@
+/* AI를 사용한 css 이후 한번 복습하고 스스로 해보기 */
+
+/* 전체 페이지의 기본 배경색을 흰색으로 지정 */
+body {
+    font-family: 'Malgun Gothic', '맑은 고딕', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #fff;
+    /* body의 기본 배경색은 흰색입니다. */
+    margin: 0;
+    padding: 0;
+}
+
+/* 헤더, 푸터, 메인 콘텐츠 영역을 중앙 정렬하고 너비를 조절 */
+header,
+#content,
+footer {
+    width: 70%;
+    /* 모든 주요 영역의 너비를 화면의 70%로 설정 */
+    max-width: 1200px;
+    /* 너무 넓어지지 않도록 최대 너비 설정 */
+    margin: 0 auto;
+    /* 좌우 여백을 자동으로 만들어 중앙 정렬 */
+}
+
+/* 헤더 스타일 */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.nav {
+    display: flex;
+    gap: 40px;
+}
+
+.nav>li {
+    position: relative;
+}
+
+.nav>li>a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding: 15px 0;
+    font-weight: bold;
+}
+
+.nav>li>a:hover {
+    color: #007bff;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    min-width: 150px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.submenu li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.submenu li a:hover {
+    background-color: #e9ecef;
+}
+
+/* 메인 컨텐츠 영역 */
+#content {
+    display: flex;
+    flex-wrap: wrap;
+    /* 자식 요소들이 줄 바꿈되게 설정 */
+    gap: 20px;
+    padding: 20px 0;
+    /* 내부 상하 패딩 */
+}
+
+/* 이미지 슬라이드 */
+#imgslide {
+    width: 100%;
+    /* 한 줄 전체를 차지 */
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+#imgslide img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+#imgslide img:first-child {
+    opacity: 1;
+}
+
+/* 공지사항, 정보나눔 섹션 */
+.notice {
+    text-align: center;
+    flex: 2;
+    /* 2배 넓게 설정 */
+    padding: 20px;
+}
+
+td {
+    text-align: left;
+}
+
+td>a {
+    text-decoration: none;
+    color: black;
+
+}
+
+.partner {
+    text-align: center;
+    flex: 1;
+    /* 1배 너비 설정 */
+    padding: 20px;
+}
+
+.partner_info img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+/* 아이콘 섹션 */
+.icon {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.imgbtn {
+    text-align: center;
+    flex-basis: 33.33%;
+}
+
+.imgbtn img {
+    width: 100px;
+    height: 100px;
+    transition: transform 0.3s;
+}
+
+.imgbtn img:hover {
+    transform: scale(1.1);
+}
+
+.imgbtn button {
+    display: block;
+    margin: 10px auto 0;
+    padding: 10px 20px;
+    border: none;
+    background-color: gray;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* 푸터 */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #ccc;
+    font-size: 14px;
+}
+
+footer span {
+    display: block;
+    margin-bottom: 5px;
+}

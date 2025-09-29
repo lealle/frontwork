@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>부트스트랩</title>
+    <script src="resources/js/jquery-3.7.1.min.js"></script>
+    <!-- bootstrap js, css CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">홈페이지</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">소개</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            상품
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">바지</a></li>
+                            <li><a class="dropdown-item" href="#">반바지</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">겨울바지</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <h1 align="center">게 시 판</h1>
+    <!-- 과거 방식 -->
+    <table class="table table-striped table-hover">
+        <!-- 2개이상 겹쳐서 가능 안되는것도 있음  -->
+        <!-- 폭 다 차지 그게 싫으면 div 넣어서 width height 설정하면 됨  -->
+        <thead>
+            <tr>
+                <th>글번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>작성일</th>
+                <th>조회수</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>3</td>
+                <td>세번째 제목</td>
+                <td>user01</td>
+                <td>2025-09-26</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>두번째 제목</td>
+                <td>user02</td>
+                <td>2025-08-30</td>
+                <td>48</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>첫번째 제목</td>
+                <td>user02</td>
+                <td>2025-08-03</td>
+                <td>107</td>
+            </tr>
+        </tbody>
+
+    </table>
+    <br><br>
+    선택된 게시글 정보 :
+    <span id="s0">글번호</span> /
+    <span id="s1">제목</span> /
+    <span id="s2">작성자</span> /
+    <span id="s3">작성일</span> /
+    <span id="s4">조회수</span>
+
+    <script>
+        $(() => {
+            // children 안쓰고 tody>tr해도 됨
+            $('tbody').children().each(function (i, el) {
+                $(this).click(function () {
+                    for (let j = 0; j < 5; j++) {
+                        $(`#s${j}`).html($(this).children().eq(j).html());
+                    }
+                })
+            });
+        });
+    </script>
+    <hr>
+    <br><br>
+    <form action="member.do">
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
+                <label for="inputId" class="col-form-label">ID&emsp;&emsp;&emsp;</label>
+            </div>
+            <div class="col-auto">
+                <input type="text" id="inputId" class="form-control" aria-describedby="passwordHelpInline">
+            </div>
+        </div>
+
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
+                <label for="inputPass" class="col-form-label">Password</label>
+            </div>
+            <div class="col-auto">
+                <input type="text" id="inputPass" class="form-control" aria-describedby="passwordHelpInline">
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-secondary">서버전송</button>
+        <button type="reset" class="btn btn-outline-primary">초기화</button>
+    </form>
+
+    <div class="spinner-border text-success" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+    <div class="spinner-grow text-dark" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+    <div class="spinner-grow" style="width: 3rem; height: 3rem;" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+    <button class="btn btn-primary" type="button" disabled>
+        <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+        <span role="status">Loading...</span>
+    </button>
+
+    <br>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+        data-bs-whatever="@mdo">로그인</button>
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">로그인</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">ID:</label>
+                            <input type="text" class="form-control" id="recipient-Id">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message-text" class="col-form-label">PW:</label>
+                            <input type="password" class="form-control" id="recipient-Pw">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Send message</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>

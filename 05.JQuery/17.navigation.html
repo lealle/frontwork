@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네비게이션</title>
+    <script src="resources/js/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.min.js"></script>
+
+    <style>
+        li {
+            list-style: none;
+            float: left;
+            width: 200px;
+            height: 60px;
+        }
+
+        a {
+            text-decoration: none;
+            background-color: #B3FFAA;
+            color: black;
+            display: inline-block;
+            /* 이렇게 안주면 width height 안먹힘 */
+            width: 200px;
+            height: 60px;
+            text-align: center;
+            line-height: 60px;
+            font: bold 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li><a href="#" data-bg="#B3AEFF">Home</a></li>
+        <li><a href="#" data-bg="#C2C2C2">About</a></li>
+        <li><a href="#" data-bg="#A4FFFF">Portfolio</a></li>
+        <li><a href="#" data-bg="#FFFFE6">Contact</a></li>
+    </ul>
+
+    <script>
+        $(() => {
+            $('li>a').hover(function () {
+                let bgColor = $(this).attr('data-bg');
+                // $(this).css('backgroundColor', `${$(this).attr('data-bg')}`)
+                $(this).stop().animate({ 'background-color': bgColor, color: 'white' }, 1000)
+                // stop() 메서드를 사용하지 않으면, 사용자가 버튼을 여러 번 빠르게 클릭할 경우 클릭 횟수만큼 애니메이션이 중첩되어 순차적으로 실행됩니다. 예를 들어, 사용자가 5번 클릭했다면, 첫 번째 애니메이션이 끝나고 두 번째 애니메이션이 시작되는 식으로 애니메이션이 모두 끝날 때까지 대기해야 합니다.
+
+                // stop()을 사용하면, 새로운 애니메이션이 시작되기 전에 기존에 진행 중이던 애니메이션을 강제로 멈추기 때문에 애니메이션 중첩 현상을 방지할 수 있습니다. 이를 통해 애니메이션이 항상 최신 상태에서 시작되도록 보장하여, 사용자 경험을 개선하고 웹페이지의 동작을 더 예측 가능하게 만듭니다.
+            }, function () {
+                $(this).animate({ 'background-color': '#B3FFAA', color: 'black' }, 1000)
+            });
+        });
+    </script>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>

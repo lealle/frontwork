@@ -1,0 +1,35 @@
+body {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.content {
+    height: 700px;
+}
+
+.notice {
+
+    position: relative;
+    float: left;
+    height: 150px;
+    margin-bottom: 100px;
+}
+
+.partner {
+    float: right;
+    height: 150px;
+    margin-bottom: 100px;
+}
+
+.imgbtn {
+    display: inline-block;
+    margin: 40px 0;
+}
+
+footer {
+    text-align: center;
+}
+
+#imgslide {
+    display: none;
+}

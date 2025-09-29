@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Effect 메소드</title>
+    <script src="resources/js/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.min.js"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <h1>시각적인 효과(Effect 메소드)</h1>
+
+    <p>
+        페이지 내에 애니메이션 효과를 주기 위한 메소드의 집합
+    </p>
+
+    <h3>* show(), hide(), toggle() </h3>
+    <p>
+        선택된 요소가 점점 커지고 불투명해지면서 보여주고, <br>
+        점점 작아지면서 투명하게 사라지게 하는 메소드<br>
+    </p>
+
+    <button id="hide">숨기기</button>
+    <button id="show">보이기</button>
+    <button id="toggle">토글</button>
+    <br><br>
+    <img src="resources/img/cat-323262_1280.jpg" alt="고양이" id="img1">
+
+    <script>
+        $('#hide').click(function () {
+            $('#img1').hide(2000, 'easeInElastic');
+        })
+        $('#show').click(function () {
+            $('#img1').show(2000, 'easeInElastic');
+        })
+        $('#toggle').click(function () {
+            $('#img1').toggle(2000, 'easeInBounce');
+        })
+
+        // easing 으로 애니메이션 효과 줄 수 있음(기본값 linear)
+    </script>
+
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>

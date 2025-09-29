@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slideUp_slideDown</title>
+    <script src="resources/js/jquery-3.7.1.min.js"></script>
+    <style>
+        div {
+            background-color: beige;
+            border: 1px solid yellow;
+            border-radius: 15px;
+            width: 300px;
+            height: 35px;
+            line-height: 35px;
+            padding-left: 20px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        p {
+            width: 300px;
+            height: 50px;
+            padding: 10px 0 0 20px;
+            border: 1px solid lightgray;
+            border-radius: 10px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div>Q. 질문입니다.</div>
+    <p>A. 질문에 대한 답입니다.</p>
+    <div>Q. 수업시작시간은 몇시 입니까?</div>
+    <p>A. 오후 3시부터 입니다.</p>
+    <div>Q. 수업종료시간은 몇시 입니까?</div>
+    <p>A. 오후 10시 20분 입니다.</p>
+    <div>Q. 저녁식사시간은 언제 입니까?</div>
+    <p>A. 오후 5시 50분 ~ 6시 30분까지 입니다.</p>
+    <div>Q. 쉬는시간은 몇분 입니까?</div>
+    <p>A. 10분 입니다.</p>
+
+
+    <script>
+        $('div').click(function () {
+            const p = $(this).next();
+
+            // if ($(this).next().css('display') == 'none') {
+            //     $(this).next().css('display', 'block');
+            // } else {
+            //     $(this).next().css('display', '');
+            // }
+
+            // slide 효과
+            // if ($(this).next().css('display') == 'none') {
+            //     p.slideDown();
+            // } else {
+            //     $(this).next().slideUp();
+            // }
+            p.slideToggle();
+        })
+    </script>
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>

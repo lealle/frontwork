@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fade In | Out</title>
+    <script src="resources/js/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <h3>* fadeIn(), fadeOut(), fadeToggle() </h3>
+    <p>
+        선택된 요소가 점점 투명해지면서 사라지고, 불투명해지면서 나타나게 하는 메소든
+    </p>
+    <!-- fade in | out 은 ui CDN 불필요 없어도 됨 -->
+    <button type="text" id="fadeIn">보이기
+    </button>
+    <button type="text" id="fadeOut">숨기기
+    </button>
+    <button type="text" id="fadeToggle">토글
+    </button>
+
+    <img src="resources/img/cat-323262_1280.jpg" alt="고양이" id="img1">
+    <div id="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia sapiente sint,
+        ducimus expedita
+        fugiat repellendus sed! Delectus animi non, quis velit voluptatibus eius facilis cumque numquam
+        ducimus, quo
+        fuga dolorem. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis fugiat facilis, neque
+        autem
+        dignissimos ut assumenda? Impedit totam nobis iusto provident dolorum, incidunt velit sit nostrum
+        error aperiam
+        hic a?</div>
+
+    <script>
+        $('#fadeIn').click(function () {
+            $('#img1').fadeTo(2000, 0.8); // 2번째 인수는 투명
+            // $('#img1').fadeIn(2000);
+            $('#content').fadeIn(2000);
+        })
+        $('#fadeOut').click(function () {
+            // $('#img1').fadeOut(2000);
+            // $('#content').fadeOut(2000);
+
+            $('#img1').fadeTo(2000, 0.2);
+            $('#content').fadeTo(2000, 0.2);
+            // 투명도 조정
+
+
+        })
+        $('#fadeToggle').click(function () {
+            $('#img1').fadeToggle(2000);
+            $('#content').fadeToggle(2000);
+        })
+    </script>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>
